@@ -1,7 +1,7 @@
-#define beta rc2
+%define beta rc
 
 Name:		qt6-qtscxml
-Version:	6.8.2
+Version:	6.9.0
 Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -42,7 +42,11 @@ Qt %{qtmajor} XML SceneGraph library
 %global extra_devel_files_Scxml \
 %{_qtdir}/libexec/qscxmlc \
 %{_qtdir}/mkspecs/features/qscxmlc.prf \
-%{_qtdir}/sbom/*
+%{_qtdir}/sbom/* \
+%{_qtdir}/include/QtScxmlGlobal \
+%{_qtdir}/lib/cmake/Qt6ScxmlGlobal \
+%{_qtdir}/mkspecs/modules/qt_lib_scxmlglobal_private.pri \
+%{_qtdir}/modules/ScxmlGlobal.json
 
 %global extra_files_ScxmlQml \
 %{_qtdir}/qml/QtScxml
