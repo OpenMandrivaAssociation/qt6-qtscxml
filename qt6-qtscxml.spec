@@ -2,7 +2,7 @@
 
 Name:		qt6-qtscxml
 Version:	6.9.0
-Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
+Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}2
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
 Source:		qt3d-%{?snapshot:%{snapshot}}%{!?snapshot:%{version}}.tar.zst
@@ -59,6 +59,9 @@ Qt %{qtmajor} XML SceneGraph library
 
 %global extra_devel_files_StateMachineQml \
 %{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlstatemachine*.cmake
+
+%global extra_devel_reqprov_StateMachine \
+Requires: %{mklibname Qt6Scxml -d} = %{EVRD}
 
 %qt6libs Scxml ScxmlQml StateMachine StateMachineQml
 
