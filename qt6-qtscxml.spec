@@ -48,6 +48,9 @@ Qt %{qtmajor} XML SceneGraph library
 %{_qtdir}/lib/cmake/Qt6ScxmlGlobalPrivate \
 %{_qtdir}/modules/ScxmlGlobalPrivate.json
 
+%global extra_devel_reqprov_Scxml \
+Provides: cmake(Qt6ScxmlGlobalPrivatePrivate) = %{EVRD}
+
 %global extra_files_ScxmlQml \
 %{_qtdir}/qml/QtScxml
 
